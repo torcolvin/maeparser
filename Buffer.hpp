@@ -268,7 +268,7 @@ std::ostream& operator<<(std::ostream& os, const Buffer& b);
  */
 class EXPORT_MAEPARSER TokenBufferList
 {
-  private:
+  public:
     /// A simple data class to keep the info about the buffers and tokens
     // straight.
     class EXPORT_MAEPARSER TokenBuffer
@@ -285,6 +285,7 @@ class EXPORT_MAEPARSER TokenBufferList
         {
         }
     };
+  private:
 
     /// List of TokenBuffer objects.
     std::list<TokenBuffer> m_token_buffer_list;
