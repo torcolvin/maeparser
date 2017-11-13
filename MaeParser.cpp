@@ -24,7 +24,7 @@ static std::string outer_block_name(Buffer& buffer);
 void read_exception::format(int line_number, int column, const char* msg)
 {
     std::stringstream ss;
-    ss << "Line " << line_number << ", column " << column, ": " << msg;
+    ss << "Line " << line_number << ", column " << column << ": " << msg;
     m_msg  = ss.str();
 }
 
