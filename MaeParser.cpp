@@ -88,7 +88,7 @@ bool character(char c, Buffer& buffer, char*& save)
  * Read an integer and return its value. An integer is terminated
  * either by whitespace or a ']'.
  */
-template <> int parse_value<int>(Buffer& buffer)
+template <> EXPORT_MAEPARSER int parse_value<int>(Buffer& buffer)
 {
     int value = 0;
     int sign = 1;
@@ -128,7 +128,7 @@ template <> int parse_value<int>(Buffer& buffer)
     return value * sign;
 }
 
-template <> double parse_value<double>(Buffer& buffer)
+template <> EXPORT_MAEPARSER double parse_value<double>(Buffer& buffer)
 {
     char* save = buffer.current;
     while (buffer.current < buffer.end || buffer.load(save)) {
@@ -173,7 +173,7 @@ done:
     return value;
 }
 
-template <> std::string parse_value<std::string>(Buffer& buffer)
+template <> EXPORT_MAEPARSER std::string parse_value<std::string>(Buffer& buffer)
 {
     char* save = buffer.current;
     if (*buffer.current != '"') {
@@ -201,7 +201,7 @@ template <> std::string parse_value<std::string>(Buffer& buffer)
     }
 }
 
-template <> bool parse_value<bool>(Buffer& buffer)
+template <> EXPORT_MAEPARSER bool parse_value<bool>(Buffer& buffer)
 {
     bool value = false;
     if (*buffer.current == '1') {

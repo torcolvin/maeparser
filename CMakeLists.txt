@@ -6,7 +6,11 @@ project(maeparser)
 find_package(Boost)
 include_directories(${Boost_INCLUDE_DIRS})
 
-add_library(maeparser Buffer.cpp MaeBlock.cpp MaeParser.cpp Reader.cpp)
+add_library(maeparser SHARED Buffer.cpp MaeBlock.cpp MaeParser.cpp Reader.cpp)
+
+target_compile_definitions(maeparser PRIVATE IN_MAEPARSER)
+
+set_property(TARGET maeparser PROPERTY CXX_VISIBILITY_PRESET "hidden")
 
 enable_testing()
 add_subdirectory(test)
