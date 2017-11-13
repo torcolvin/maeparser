@@ -24,5 +24,6 @@ before_build:
   - cmake -G "Visual Studio 12 Win64" -DBOOST_ROOT="%BOOST_ROOT%" -DBOOST_LIBRARYDIR="%BOOST_LIBRARYDIR%" -DCMAKE_INSTALL_PREFIX=%P% ..
 
 test_script:
-  - ctest
+  - cd c:\projects\maeparser\build
+  - ctest --verbose --build-config %CONFIGURATION%
 
