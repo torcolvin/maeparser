@@ -91,7 +91,7 @@ class EXPORT_MAEPARSER read_exception : public std::exception
  * collections, so we can do things like easily invoke different parsers on
  * each element while parsing a row of values.
  */
-class Parser
+class EXPORT_MAEPARSER Parser
 {
   public:
     virtual void parse(Buffer& buffer) = 0;
