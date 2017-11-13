@@ -1,0 +1,28 @@
+
+image: Visual Studio 2013
+
+platform: x64
+
+configuration:
+  - Release
+  - Debug
+
+beofre_build:
+
+install:
+  # by default, all script lines are interpreted as batch
+
+build:
+  project: c:\projects\maeparser\build\INSTALL.vcxproj
+  parallel: true
+
+before_build:
+  - cd c:\projects\maeparser
+  - mkdir c:\projects\maeparser\build
+  - cd c:\projects\maeparser\build
+  - cmake -G "Visual Studio 12 Win64" ..
+
+test_script:
+  - mkdir c:\projects\maeparser\build
+  - ctest
+
