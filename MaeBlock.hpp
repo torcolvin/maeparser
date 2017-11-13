@@ -30,7 +30,7 @@ inline const T& get_property(const std::map<std::string, T>& map,
 class IndexedBlockBuffer;
 class IndexedBlock;
 
-class IndexedBlockMapI
+class EXPORT_MAEPARSER IndexedBlockMapI
 {
   public:
     virtual ~IndexedBlockMapI(){};

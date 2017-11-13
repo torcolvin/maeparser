@@ -22,7 +22,7 @@ namespace schrodinger
  * A simple data class to hold unchanging character buffer data. Copies are
  * reference counted.
  */
-class BufferData
+class EXPORT_MAEPARSER BufferData
 {
   private:
     std::shared_ptr<std::vector<char>> m_data;
@@ -271,7 +271,7 @@ class EXPORT_MAEPARSER TokenBufferList
   private:
     /// A simple data class to keep the info about the buffers and tokens
     // straight.
-    class TokenBuffer
+    class EXPORT_MAEPARSER TokenBuffer
     {
       public:
         BufferData buffer_data;
