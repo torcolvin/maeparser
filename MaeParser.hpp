@@ -70,6 +70,8 @@ template <typename T> T parse_value(Buffer& buffer);
 class EXPORT_MAEPARSER read_exception : public std::exception
 {
   private:
+    std::string m_msg;
+
     void format(int line_number, int column, const char* msg);
 
   public:
@@ -83,7 +85,7 @@ class EXPORT_MAEPARSER read_exception : public std::exception
         format(line_number, column, msg);
     }
 
-    virtual const char* what() const throw() { return m_msg; }
+    virtual const char* what() const throw() { return m_msg.c_str(); }
 };
 
 /**
