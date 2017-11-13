@@ -70,9 +70,6 @@ template <typename T> T parse_value(Buffer& buffer);
 class EXPORT_MAEPARSER read_exception : public std::exception
 {
   private:
-    static const int BUFFER_SIZE = 256;
-    char m_msg[BUFFER_SIZE];
-
     void format(int line_number, int column, const char* msg);
 
   public:

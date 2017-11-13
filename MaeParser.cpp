@@ -25,6 +25,8 @@ const int read_exception::BUFFER_SIZE;
 
 void read_exception::format(int line_number, int column, const char* msg)
 {
+    const int BUFFER_SIZE = 256;
+    char m_msg[BUFFER_SIZE];
 #ifndef _MSC_VER
     snprintf(m_msg, BUFFER_SIZE, "Line %d, column %d: %s\n", line_number,
              column, msg);
