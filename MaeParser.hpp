@@ -279,7 +279,13 @@ class EXPORT_MAEPARSER MaeParser
             std::string msg("Bad file argument");
             if (errno != 0) {
                 msg += ": ";
+#ifdef _MSC_VER
+                char buf[100];
+                strerror_s(buf, 100, errno);
+                msg += buf;
+#else
                 msg += strerror(errno);
+#endif
             } else {
                 msg += ".";
             }
